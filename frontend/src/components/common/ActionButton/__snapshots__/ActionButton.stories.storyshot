@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Resource/ViewButton View 1`] = `
+exports[`Storyshots common/ActionButton Basic 1`] = `
 <div
   id="root"
 >
   <button
-    aria-label="View YAML"
-    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd"
+    aria-label="Some label"
+    class="MuiButtonBase-root MuiIconButton-root"
     tabindex="0"
-    title="View YAML"
+    title="Some label"
     type="button"
   >
     <span
@@ -23,16 +23,17 @@ exports[`Storyshots Resource/ViewButton View 1`] = `
 </div>
 `;
 
-exports[`Storyshots Resource/ViewButton View Open 1`] = `
+exports[`Storyshots common/ActionButton Large And Colorful 1`] = `
 <div
   id="root"
 >
   <button
-    aria-label="View YAML"
-    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd"
+    aria-label="Some label"
+    class="MuiButtonBase-root MuiIconButton-root"
     tabindex="0"
-    title="View YAML"
+    title="Some label"
     type="button"
+    width="95"
   >
     <span
       class="MuiIconButton-label"

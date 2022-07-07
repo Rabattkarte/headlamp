@@ -1,13 +1,10 @@
-import { Icon } from '@iconify/react';
 import Box from '@material-ui/core/Box';
 import DialogContent from '@material-ui/core/DialogContent';
 import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
-import Tooltip from '@material-ui/core/Tooltip';
 import Ansi from 'ansi-to-react';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import ActionButton from './ActionButton';
 import { Dialog, DialogProps } from './Dialog';
 
 interface styleProps {
@@ -50,7 +47,6 @@ export function LogViewer(props: LogViewerProps) {
   const [isFullScreen, setIsFullScreen] = React.useState(false);
   const classes = useStyle({ isFullScreen });
   const logsBottomRef = React.useRef<HTMLDivElement>(null);
-  const { t } = useTranslation('frequent');
 
   function downloadLog() {
     const element = document.createElement('a');
@@ -87,11 +83,11 @@ export function LogViewer(props: LogViewerProps) {
             ))}
           </Grid>
           <Grid item xs>
-            <Tooltip title={t('Download') as string}>
-              <IconButton aria-label={t('download')} onClick={downloadLog}>
-                <Icon icon="mdi:file-download-outline" />
-              </IconButton>
-            </Tooltip>
+            <ActionButton
+              label={'frequent|Download'}
+              onClick={downloadLog}
+              icon="mdi:file-download-outline"
+            />
           </Grid>
         </Grid>
         <Box className={classes.terminal}>

@@ -1,8 +1,6 @@
-import { Icon } from '@iconify/react';
-import { IconButton, Tooltip } from '@material-ui/core';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { KubeObject } from '../../../lib/k8s/cluster';
+import ActionButton from '../ActionButton';
 import EditorDialog from './EditorDialog';
 
 export interface ViewButtonProps {
@@ -14,23 +12,13 @@ export interface ViewButtonProps {
 
 function ViewButton({ item, initialToggle = false }: ViewButtonProps) {
   const [toggle, setToggle] = React.useState(initialToggle);
-  const { t } = useTranslation('resource');
 
   function handleButtonClick() {
     setToggle(toggle => !toggle);
   }
   return (
     <>
-      <Tooltip title={t('View YAML') as string}>
-        <IconButton
-          edge="end"
-          aria-label={t('show yaml viewer')}
-          onClick={handleButtonClick}
-          onMouseDown={event => event.preventDefault()}
-        >
-          <Icon icon="mdi:eye" />
-        </IconButton>
-      </Tooltip>
+      <ActionButton label={'View YAML'} onClick={handleButtonClick} icon="mdi:eye" edge="end" />
       <EditorDialog
         item={item.jsonData}
         open={toggle}
